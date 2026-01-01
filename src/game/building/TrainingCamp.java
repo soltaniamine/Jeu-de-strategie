@@ -46,10 +46,10 @@ public class TrainingCamp extends Building {
         
         if (owner.payResources(soldier.getCost())) {
             owner.addUnit(soldier);
-            System.out.println("✅ Soldat recruté à la position (" + x + ", " + y + ")");
+            System.out.println("Soldat recruté à la position (" + x + ", " + y + ")");
             return soldier;
         } else {
-            System.out.println("❌ Ressources insuffisantes pour recruter un soldat !");
+            System.out.println("Ressources insuffisantes pour recruter un soldat !");
             return null;
         }
     }
@@ -68,10 +68,10 @@ public class TrainingCamp extends Building {
         
         if (owner.payResources(archer.getCost())) {
             owner.addUnit(archer);
-            System.out.println("✅ Archer recruté à la position (" + x + ", " + y + ")");
+            System.out.println("Archer recruté à la position (" + x + ", " + y + ")");
             return archer;
         } else {
-            System.out.println("❌ Ressources insuffisantes pour recruter un archer !");
+            System.out.println("Ressources insuffisantes pour recruter un archer !");
             return null;
         }
     }
@@ -90,10 +90,10 @@ public class TrainingCamp extends Building {
         
         if (owner.payResources(cavalry.getCost())) {
             owner.addUnit(cavalry);
-            System.out.println("✅ Cavalier recruté à la position (" + x + ", " + y + ")");
+            System.out.println("Cavalier recruté à la position (" + x + ", " + y + ")");
             return cavalry;
         } else {
-            System.out.println("❌ Ressources insuffisantes pour recruter un cavalier !");
+            System.out.println("Ressources insuffisantes pour recruter un cavalier !");
             return null;
         }
     }
@@ -103,13 +103,13 @@ public class TrainingCamp extends Building {
      */
     public void displayRecruitmentMenu() {
         System.out.println("\n=== Menu de Recrutement ===");
-        System.out.println("1. 🛡️  Soldat - 30 Or, 20 Nourriture");
-        System.out.println("2. 🏹 Archer - 40 Or, 15 Bois, 15 Nourriture");
-        System.out.println("3. 🐎 Cavalier - 50 Or, 30 Nourriture");
+        System.out.println("1. Soldat - 30 Or, 20 Nourriture");
+        System.out.println("2. Archer - 40 Or, 15 Bois, 15 Nourriture");
+        System.out.println("3. Cavalier - 50 Or, 30 Nourriture");
     }
 
     @Override
     public String toString() {
-        return "⚔️ " + super.toString();
+        return " " + super.toString();
     }
 }

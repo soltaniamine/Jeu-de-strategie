@@ -49,11 +49,11 @@ public class Farm extends Building {
 
         int bonus = production.get(ResourceType.FOOD);
         owner.addResource(ResourceType.FOOD, bonus);
-        System.out.println("🌾 Récolte abondante ! +" + bonus + " Nourriture supplémentaire");
+        System.out.println(" Récolte abondante ! +" + bonus + " Nourriture supplémentaire");
     }
 
     @Override
     public String toString() {
-        return "🌾 " + super.toString();
+        return " " + super.toString();
     }
 }

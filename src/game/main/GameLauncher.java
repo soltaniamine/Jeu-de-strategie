@@ -76,15 +76,15 @@ public class GameLauncher {
         System.out.println("\n╔═══════════════════════════════════════╗");
         System.out.println("║            RÈGLES DU JEU              ║");
         System.out.println("╚═══════════════════════════════════════╝");
-        System.out.println("\n📌 Objectif:");
+        System.out.println("\n Objectif:");
         System.out.println("   Détruire le Centre de Commandement ennemi");
-        System.out.println("\n🏗️  Bâtiments:");
+        System.out.println("\n  Bâtiments:");
         System.out.println("   - Centre de Commandement: +10 Or/tour");
         System.out.println("   - Ferme: +15 Nourriture/tour");
         System.out.println("   - Mine: +10 Pierre, +5 Or/tour");
         System.out.println("   - Scierie: +12 Bois/tour");
         System.out.println("   - Camp d'Entraînement: Recrute des unités");
-        System.out.println("\n⚔️  Unités:");
+        System.out.println("\n  Unités:");
         System.out.println("   - Soldat: Corps à corps, résistant");
         System.out.println("   - Archer: Distance, fragile");
         System.out.println("   - Cavalier: Rapide, mobile");
@@ -109,7 +109,7 @@ public class GameLauncher {
         initializePlayerBase(player, 2, 2);
         initializePlayerBase(enemy, 22, 22);
 
-        System.out.println("\n✅ Partie initialisée !");
+        System.out.println("\n Partie initialisée !");
         System.out.println("Vous êtes en position (2, 2)");
         System.out.println("L'ennemi est en position (12, 12)");
         
@@ -212,7 +212,7 @@ public class GameLauncher {
                     break;
                 case 5:
                     turnEnded = true;
-                    System.out.println("\n✅ Tour terminé !");
+                    System.out.println("\n Tour terminé !");
                     break;
                 default:
                     System.out.println("\nChoix invalide !");
@@ -261,9 +261,9 @@ public class GameLauncher {
         if (building != null && player.payResources(building.getCost())) {
             player.addBuilding(building);
             map.getTile(x, y).setBuilding(building);
-            System.out.println("✅ Construction démarrée !");
+            System.out.println(" Construction démarrée ");
         } else {
-            System.out.println("❌ Ressources insuffisantes ou position invalide !");
+            System.out.println(" Ressources insuffisantes ou position invalide ");
         }
     }
 
@@ -350,7 +350,7 @@ public class GameLauncher {
      * Tour de l'ennemi (IA basique)
      */
     private void enemyTurn() {
-        System.out.println("\n🤖 Tour de l'IA...");
+        System.out.println("\n Tour de l'IA...");
         
         // IA simple: attaque si possible
         for (Unit enemyUnit : enemy.getUnits()) {
@@ -412,13 +412,13 @@ public class GameLauncher {
         }
 
         if (!enemyHasCC) {
-            System.out.println("\n🎉 VICTOIRE ! Vous avez détruit le Centre de Commandement ennemi !");
+            System.out.println("\n VICTOIRE ! Vous avez détruit le Centre de Commandement ennemi !");
             gameRunning = false;
             return true;
         }
 
         if (!playerHasCC) {
-            System.out.println("\n💀 DÉFAITE ! Votre Centre de Commandement a été détruit !");
+            System.out.println("\n DÉFAITE ! Votre Centre de Commandement a été détruit !");
             gameRunning = false;
             return true;
         }

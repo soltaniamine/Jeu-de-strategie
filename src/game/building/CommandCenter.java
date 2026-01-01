@@ -51,18 +51,18 @@ public class CommandCenter extends Building {
 
         int bonus = 20;
         owner.addResource(ResourceType.GOLD, bonus);
-        System.out.println("💰 Fonds d'urgence activés ! +" + bonus + " Or");
+        System.out.println(" Fonds d'urgence activés ! +" + bonus + " Or");
     }
 
     @Override
     protected void destroy() {
         super.destroy();
-        System.out.println("⚠️ Le Centre de Commandement a été détruit !");
-        System.out.println("🚨 " + owner.getName() + " est en danger critique !");
+        System.out.println(" Le Centre de Commandement a été détruit !");
+        System.out.println(" " + owner.getName() + " est en danger critique !");
     }
 
     @Override
     public String toString() {
-        return "🏰 " + super.toString();
+        return " " + super.toString();
     }
 }

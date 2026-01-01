@@ -32,6 +32,6 @@ public class Sawmill extends Building {
 
     @Override
     public String toString() {
-        return "🪵 " + super.toString();
+        return " " + super.toString();
     }
 }

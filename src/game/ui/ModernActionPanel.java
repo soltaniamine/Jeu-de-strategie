@@ -491,13 +491,13 @@ public class ModernActionPanel extends JPanel {
             JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
             buttonPanel.setBackground(new Color(40, 40, 50));
             
-            ModernButton okButton = new ModernButton("✓ Confirmer", new Color(76, 175, 80));
+            ModernButton okButton = new ModernButton("Confirmer", new Color(76, 175, 80));
             okButton.addActionListener(e -> {
                 confirmed = true;
                 dispose();
             });
             
-            ModernButton cancelButton = new ModernButton("✗ Annuler", new Color(244, 67, 54));
+            ModernButton cancelButton = new ModernButton("Annuler", new Color(244, 67, 54));
             cancelButton.addActionListener(e -> dispose());
             
             buttonPanel.add(okButton);

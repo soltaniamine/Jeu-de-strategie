@@ -56,6 +56,6 @@ public class Cavalry extends Unit {
 
     @Override
     public String toString() {
-        return "🐎 " + super.toString();
+        return " " + super.toString();
     }
 }

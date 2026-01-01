@@ -73,7 +73,7 @@ public class ModernMainMenuFrame extends JFrame {
         exitButton.addActionListener(e -> System.exit(0));
         
         // Footer
-        JLabel footerLabel = new JLabel("Développé avec Java Swing • Cliquez pour commencer");
+        JLabel footerLabel = new JLabel("Développé par Soltani Mohamed Elamine - ISIL A G1");
         footerLabel.setFont(new Font("Segoe UI", Font.ITALIC, 12));
         footerLabel.setForeground(new Color(150, 150, 170));
         footerLabel.setBounds(200, 570, 600, 30);

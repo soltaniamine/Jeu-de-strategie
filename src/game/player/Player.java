@@ -132,14 +132,14 @@ public class Player {
     public void displayStatus() {
         System.out.println("\n=== État de " + name + " ===");
         
-        System.out.println("\n📦 Ressources:");
+        System.out.println("\n Ressources:");
         for (Map.Entry<ResourceType, Integer> entry : resources.entrySet()) {
             System.out.println("  " + entry.getKey().getIcon() + " " + 
                              entry.getKey().getName() + ": " + entry.getValue());
         }
         
-        System.out.println("\n⚔️  Unités: " + units.size());
-        System.out.println("🏗️  Bâtiments: " + buildings.size());
+        System.out.println("\n  Unités: " + units.size());
+        System.out.println("  Bâtiments: " + buildings.size());
     }
 
     /**

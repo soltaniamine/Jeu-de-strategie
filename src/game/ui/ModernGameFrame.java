@@ -293,7 +293,7 @@ public class ModernGameFrame extends JFrame {
         
         if (!enemyHasCC) {
             JOptionPane.showMessageDialog(this,
-                "🎉 VICTOIRE !\nVous avez détruit le Centre de Commandement ennemi !",
+                " VICTOIRE !\nVous avez détruit le Centre de Commandement ennemi !",
                 "Victoire !",
                 JOptionPane.INFORMATION_MESSAGE);
             dispose();
@@ -303,7 +303,7 @@ public class ModernGameFrame extends JFrame {
         
         if (!playerHasCC) {
             JOptionPane.showMessageDialog(this,
-                "💀 DÉFAITE !\nVotre Centre de Commandement a été détruit !",
+                " DÉFAITE !\nVotre Centre de Commandement a été détruit !",
                 "Défaite",
                 JOptionPane.ERROR_MESSAGE);
             dispose();

@@ -62,11 +62,11 @@ public abstract class Building {
         remainingTime--;
         if (remainingTime <= 0) {
             isBuilt = true;
-            System.out.println("✅ " + name + " est maintenant construit !");
+            System.out.println(" " + name + " est maintenant construit !");
             return true;
         }
 
-        System.out.println("🏗️ " + name + " en construction... (" + 
+        System.out.println(" " + name + " en construction... (" + 
                          remainingTime + " tours restants)");
         return false;
     }
@@ -79,7 +79,7 @@ public abstract class Building {
             return;
         }
 
-        System.out.println("📦 " + name + " produit des ressources:");
+        System.out.println(" " + name + " produit des ressources:");
         for (Map.Entry<ResourceType, Integer> entry : production.entrySet()) {
             owner.addResource(entry.getKey(), entry.getValue());
             System.out.println("  +" + entry.getValue() + " " + 
@@ -115,7 +115,7 @@ public abstract class Building {
      * Détruit le bâtiment
      */
     protected void destroy() {
-        System.out.println("💥 " + name + " a été détruit !");
+        System.out.println(" " + name + " a été détruit !");
         if (owner != null) {
             owner.removeBuilding(this);
         }
@@ -139,8 +139,8 @@ public abstract class Building {
         System.out.println("Propriétaire: " + (owner != null ? owner.getName() : "Aucun"));
         System.out.println("Position: (" + x + ", " + y + ")");
         System.out.println("Santé: " + currentHealth + "/" + maxHealth);
-        System.out.println("Statut: " + (isBuilt ? "✅ Opérationnel" : 
-                         "🏗️ En construction (" + remainingTime + " tours)"));
+        System.out.println("Statut: " + (isBuilt ? " Opérationnel" : 
+                         "En construction (" + remainingTime + " tours)"));
         
         if (!production.isEmpty()) {
             System.out.println("\nProduction par tour:");

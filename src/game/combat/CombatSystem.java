@@ -31,7 +31,7 @@ public class CombatSystem {
             return false;
         }
 
-        System.out.println("\n⚔️ === COMBAT ===");
+        System.out.println("\n === COMBAT ===");
         System.out.println(attacker.getName() + " (" + attacker.getCurrentHealth() + " PV) " +
                          "attaque " + defender.getName() + " (" + defender.getCurrentHealth() + " PV)");
 
@@ -45,15 +45,15 @@ public class CombatSystem {
         // Chance de coup critique (10%)
         if (random.nextInt(100) < 10) {
             finalDamage = (int)(finalDamage * 1.5);
-            System.out.println("💥 COUP CRITIQUE !");
+            System.out.println(" COUP CRITIQUE !");
         }
 
         // Application des dégâts
         defender.takeDamage(finalDamage);
         attacker.setHasActed(true);
 
-        System.out.println("➡️  Dégâts infligés: " + finalDamage);
-        System.out.println("❤️  " + defender.getName() + " PV restants: " + 
+        System.out.println("  Dégâts infligés: " + finalDamage);
+        System.out.println("  " + defender.getName() + " PV restants: " + 
                          defender.getCurrentHealth() + "/" + defender.getMaxHealth());
 
         // Contre-attaque si le défenseur survit et est à portée
@@ -85,34 +85,34 @@ public class CombatSystem {
      */
     public boolean canAttack(Unit attacker, Unit defender) {
         if (attacker == null || defender == null) {
-            System.out.println("❌ Unité invalide !");
+            System.out.println(" Unité invalide !");
             return false;
         }
 
         if (!attacker.isAlive()) {
-            System.out.println("❌ L'attaquant est mort !");
+            System.out.println(" L'attaquant est mort !");
             return false;
         }
 
         if (!defender.isAlive()) {
-            System.out.println("❌ Le défenseur est mort !");
+            System.out.println(" Le défenseur est mort !");
             return false;
         }
 
         if (attacker.hasActed()) {
-            System.out.println("❌ " + attacker.getName() + " a déjà agi ce tour !");
+            System.out.println(" " + attacker.getName() + " a déjà agi ce tour !");
             return false;
         }
 
         if (attacker.getOwner() == defender.getOwner()) {
-            System.out.println("❌ Vous ne pouvez pas attaquer vos propres unités !");
+            System.out.println(" Vous ne pouvez pas attaquer vos propres unités !");
             return false;
         }
 
         // Vérification de la portée
         int distance = attacker.distanceTo(defender.getX(), defender.getY());
         if (distance > attacker.getRange()) {
-            System.out.println("❌ Cible hors de portée ! (Distance: " + distance + 
+            System.out.println(" Cible hors de portée ! (Distance: " + distance + 
                              ", Portée: " + attacker.getRange() + ")");
             return false;
         }
@@ -132,16 +132,16 @@ public class CombatSystem {
      * Effectue une contre-attaque
      */
     private void performCounterAttack(Unit defender, Unit attacker) {
-        System.out.println("\n🔄 CONTRE-ATTAQUE !");
+        System.out.println("\n CONTRE-ATTAQUE !");
         
         int counterDamage = calculateDamage(defender, attacker);
         counterDamage = counterDamage / 2; // La contre-attaque fait 50% des dégâts
         
         attacker.takeDamage(counterDamage);
         
-        System.out.println("➡️  " + defender.getName() + " contre-attaque pour " + 
+        System.out.println("  " + defender.getName() + " contre-attaque pour " + 
                          counterDamage + " dégâts !");
-        System.out.println("❤️  " + attacker.getName() + " PV restants: " + 
+        System.out.println("  " + attacker.getName() + " PV restants: " + 
                          attacker.getCurrentHealth() + "/" + attacker.getMaxHealth());
     }
 
@@ -153,7 +153,7 @@ public class CombatSystem {
         if (tile != null) {
             int bonus = tile.getType().getDefenseBonus();
             if (bonus > 0) {
-                System.out.println("🛡️  Bonus de terrain: +" + bonus + " défense");
+                System.out.println("  Bonus de terrain: +" + bonus + " défense");
             }
             return bonus;
         }
@@ -191,7 +191,7 @@ public class CombatSystem {
      * Affiche les chances de victoire d'une unité contre une autre
      */
     public void displayCombatOdds(Unit attacker, Unit defender) {
-        System.out.println("\n📊 Analyse de Combat:");
+        System.out.println("\n Analyse de Combat:");
         System.out.println("Attaquant: " + attacker);
         System.out.println("Défenseur: " + defender);
         
@@ -216,7 +216,7 @@ public class CombatSystem {
      */
     public boolean moveUnit(Unit unit, int targetX, int targetY) {
         if (!map.isValidPosition(targetX, targetY)) {
-            System.out.println("❌ Position invalide !");
+            System.out.println(" Position invalide !");
             return false;
         }
 
@@ -224,19 +224,19 @@ public class CombatSystem {
         Tile targetTile = map.getTile(targetX, targetY);
 
         if (targetTile == null || !targetTile.isAccessible()) {
-            System.out.println("❌ Case inaccessible !");
+            System.out.println(" Case inaccessible !");
             return false;
         }
 
         int distance = map.getDistance(unit.getX(), unit.getY(), targetX, targetY);
         if (distance > unit.getMovementPoints()) {
-            System.out.println("❌ Trop loin ! Distance: " + distance + 
+            System.out.println(" Trop loin ! Distance: " + distance + 
                              ", Déplacement: " + unit.getMovementPoints());
             return false;
         }
 
         if (unit.hasActed()) {
-            System.out.println("❌ Cette unité a déjà agi ce tour !");
+            System.out.println(" Cette unité a déjà agi ce tour !");
             return false;
         }
 
